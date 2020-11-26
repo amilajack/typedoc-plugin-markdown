@@ -5,15 +5,19 @@ import { escape } from './escape';
 
 export function reflectionTitle(this: PageEvent, shouldEscape = true) {
   const title: string[] = [];
-  if (this.model.kindString && this.url !== this.project.url) {
-    title.push(`${this.model.kindString}: `);
+  if (this.url === this.project.url) {
+    return 'Index';
+  } else {
+    if (this.model.kindString && this.url !== this.project.url) {
+      title.push(`${this.model.kindString}: `);
+    }
+    title.push(shouldEscape ? escape(this.model.name) : this.model.name);
+    if (this.model.typeParameters) {
+      const typeParameters = this.model.typeParameters
+        .map((typeParameter: ParameterReflection) => typeParameter.name)
+        .join(', ');
+      title.push((shouldEscape ? '\\<' : '<') + typeParameters + '>');
+    }
+    return title.join('');
   }
-  title.push(shouldEscape ? escape(this.model.name) : this.model.name);
-  if (this.model.typeParameters) {
-    const typeParameters = this.model.typeParameters
-      .map((typeParameter: ParameterReflection) => typeParameter.name)
-      .join(', ');
-    title.push((shouldEscape ? '\\<' : '<') + typeParameters + '>');
-  }
-  return title.join('');
 }

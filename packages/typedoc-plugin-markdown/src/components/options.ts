@@ -6,16 +6,13 @@ import {
 
 import MarkdownTheme from '../theme';
 
-@Component({ name: 'helpers' })
+@Component({ name: 'options' })
 export class ContextAwareHelpers extends ContextAwareRendererComponent {
   @BindOption('publicPath')
   publicPath!: string;
 
   @BindOption('namedAnchors')
   namedAnchors!: boolean;
-
-  @BindOption('hideProjectName')
-  hideProjectName!: boolean;
 
   @BindOption('hideBreadcrumbs')
   hideBreadcrumbs!: boolean;
@@ -31,10 +28,6 @@ export class ContextAwareHelpers extends ContextAwareRendererComponent {
 
     MarkdownTheme.HANDLEBARS.registerHelper('hideBreadcrumbs', () => {
       return this.hideBreadcrumbs;
-    });
-
-    MarkdownTheme.HANDLEBARS.registerHelper('hideProjectName', () => {
-      return this.hideProjectName;
     });
 
     // theme properties

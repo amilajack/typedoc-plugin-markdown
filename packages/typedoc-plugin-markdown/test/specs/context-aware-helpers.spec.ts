@@ -26,12 +26,6 @@ describe(`ContextAwareHelpers:`, () => {
       ).toBeTruthy();
     });
 
-    test(`should set 'ifShowProjectName' to 'true' by default`, () => {
-      expect(
-        Handlebars.helpers.ifShowProjectName(TestApp.handlebarsOptionsStub),
-      ).toBeTruthy();
-    });
-
     test(`should set 'ifShowReflectionTitle' to 'true' by default`, () => {
       expect(
         Handlebars.helpers.ifShowReflectionTitle(TestApp.handlebarsOptionsStub),
@@ -42,12 +36,6 @@ describe(`ContextAwareHelpers:`, () => {
       expect(
         Handlebars.helpers.ifShowReflectionPath(TestApp.handlebarsOptionsStub),
       ).toBeFalsy();
-    });
-
-    test(`should set 'ifShowIndex' to 'true' by default`, () => {
-      expect(
-        Handlebars.helpers.ifShowIndex(TestApp.handlebarsOptionsStub),
-      ).toBeTruthy();
     });
 
     test(`should compile relativeURL helper`, () => {
@@ -75,12 +63,6 @@ describe(`ContextAwareHelpers:`, () => {
     test(`should set breadcrumbs to 'false'`, () => {
       expect(
         Handlebars.helpers.ifShowBreadcrumbs(TestApp.handlebarsOptionsStub),
-      ).toBeFalsy();
-    });
-
-    test(`should set project name to 'false'`, () => {
-      expect(
-        Handlebars.helpers.ifShowProjectName(TestApp.handlebarsOptionsStub),
       ).toBeFalsy();
     });
 

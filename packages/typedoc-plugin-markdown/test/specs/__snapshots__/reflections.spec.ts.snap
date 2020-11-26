@@ -1,13 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Reflections: (header) should compile template with breadcrumbs and project title 1`] = `
-"**[typedoc-plugin-markdown](../README.md)**
-
-> [helper: breadcrumbs]
+"[helper: breadcrumbs]
 
 # Enumeration: EnumReflection
-
-[partial: index]
 
 [partial: members]
 "
@@ -24,8 +20,6 @@ exports[`Reflections: (template) should compile a callable reflection 1`] = `
 
 [partial: member.signature]
 
-[partial: index]
-
 [partial: members]
 "
 `;
@@ -39,11 +33,9 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 
 ## Indexable
 
-▪ [index: number]: string
+▪ [index: *number*]: *string*
 
 [partial: comment]
-
-[partial: index]
 
 [partial: members]
 "
@@ -51,8 +43,6 @@ exports[`Reflections: (template) should compile an indexable reflection 1`] = `
 
 exports[`Reflections: (template) should compile module with breadcrumbs and project title 1`] = `
 "# Enumeration: EnumReflection
-
-[partial: index]
 
 [partial: members]
 "
@@ -73,8 +63,6 @@ Name | Description |
 ## Hierarchy
 
 [helper: hierarchy]
-
-[partial: index]
 
 [partial: members]
 "

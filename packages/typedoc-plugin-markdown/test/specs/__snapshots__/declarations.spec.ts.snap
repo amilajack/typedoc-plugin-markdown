@@ -1,119 +1,119 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Declarations: should compile a an udefined 1`] = `
-"• \`Let\` **undefinedNumberDeclaration**: number
+"•\`Let\` **undefinedNumberDeclaration**: *number*
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile a variable with default value 1`] = `
-"• \`Const\` **stringWithDefaultValueDeclaration**: \\"variable\\" = \\"variable\\"
+"•\`Const\` **stringWithDefaultValueDeclaration**: *variable* = \\"variable\\"
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile any function type 1`] = `
-"Ƭ  **AnyFunctionType**\\\\<A>: (...input: any[]) => A
-
-[partial: member.sources]
+"Ƭ **AnyFunctionType**\\\\<A>: (...\`input\`: *any*[]) => A
 
 #### Type parameters:
 
 Name | Default |
 ------ | ------ |
-\`A\` | any |
+\`A\` | *any* |
+
+[partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile declaration with double underscores in name and value 1`] = `
-"• \`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: *typeof* [\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_](../modules.md#__double_underscores_declaration__) = Symbol.for('\\\\_\\\\_type\\\\_\\\\_')
+"•\`Const\` **\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_**: *typeof* [*\\\\_\\\\_DOUBLE\\\\_UNDERSCORES\\\\_DECLARATION\\\\_\\\\_*](../modules.md#__double_underscores_declaration__) = Symbol.for('\\\\_\\\\_type\\\\_\\\\_')
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile enum delcaration 1`] = `
-"•  **Down**:  = \\"DOWN\\"
+"• **Down**:  = \\"DOWN\\"
 
 [partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile object literal cast as a const 1`] = `
-"• \`Const\` **objectLiteralAsConstDeclaration**: object = { Prop1: 'Prop1', Prop2: 'Prop1', Prop3: 'Prop1',} as const
-
-[partial: member.sources]
+"•\`Const\` **objectLiteralAsConstDeclaration**: object = { Prop1: 'Prop1', Prop2: 'Prop1', Prop3: 'Prop1',} as const
 
 #### Type declaration:
 
 Name | Type | Description |
 ------ | ------ | ------ |
-\`Prop1\` | \\"Prop1\\" | comments |
-\`Prop2\` | \\"Prop1\\" | comments |
-\`Prop3\` | \\"Prop1\\" | comments |
+\`Prop1\` | *Prop1* | comments |
+\`Prop2\` | *Prop1* | comments |
+\`Prop3\` | *Prop1* | comments |
+
+[partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile object literal declaration 1`] = `
-"▪ \`Const\` **objectLiteralDeclaration**: object
-
-[partial: member.sources]
+"▪\`Const\` **objectLiteralDeclaration**: *object*
 
 #### Properties:
 
 Name | Type | Value | Description |
 ------ | ------ | ------ | ------ |
-\`valueA\` | number | 100 | Comment for valueA |
-\`valueB\` | boolean | true | - |
+\`valueA\` | *number* | 100 | Comment for valueA |
+\`valueB\` | *boolean* | true | - |
 \`valueC\` | object | {} | - |
-\`valueZ\` | string | \\"foo\\" | Comment for valueZ |
-\`valueY\` | function | () => string | Comment for value Y |
-\`valueX\` | object | { valueA: number[] = [100, 200, 300]; valueZ: string = \\"foo\\" } | Comment for valueX |
+\`valueZ\` | *string* | \\"foo\\" | Comment for valueZ |
+\`valueY\` | function | () => *string* | Comment for value Y |
+\`valueX\` | object | { \`valueA\`: *number*[] = [100, 200, 300]; \`valueZ\`: *string* = \\"foo\\" } | Comment for valueX |
+
+[partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile type literal declaration 1`] = `
-"• \`Let\` **typeLiteralDeclaration**: object
-
-[partial: member.sources]
+"•\`Let\` **typeLiteralDeclaration**: object
 
 #### Type declaration:
 
 Name | Type | Description |
 ------ | ------ | ------ |
-\`valueA?\` | number | Comments for valueA |
-\`valueB?\` | boolean | - |
-\`valueX\` | { valueA: number[] ; valueY: (z: string) => { a: string ; b: string  } ; valueZ: string  } | Comment for valueX |
-\`valueY\` | () => string | - |
-\`valueZ\` | string | Comment for valueZ |
+\`valueA?\` | *number* | Comments for valueA |
+\`valueB?\` | *boolean* | - |
+\`valueX\` | { \`valueA\`: *number*[] ; \`valueY\`: (\`z\`: *string*) => { \`a\`: *string* ; \`b\`: *string*  } ; \`valueZ\`: *string*  } | Comment for valueX |
+\`valueY\` | () => *string* | - |
+\`valueZ\` | *string* | Comment for valueZ |
+
+[partial: member.sources]
 "
 `;
 
 exports[`Declarations: should compile type literal declaration 2`] = `
-"• \`Let\` **typeLiteralDeclarationWithFunction**: () => string
-
-[partial: member.sources]
+"•\`Let\` **typeLiteralDeclarationWithFunction**: () => *string*
 
 #### Type declaration:
 
 Name | Type |
 ------ | ------ |
-\`valueZ\` | string |
+\`valueZ\` | *string* |
+
+[partial: member.sources]
 "
 `;
 
 exports[`Declarations: should not escape charcters within markdown code 1`] = `
-"Ƭ  **SpecialCharacters**: { this_prop_has_underscores: number ; this|prop|has|the|pipe|character: string  }
-
-[partial: member.sources]
+"Ƭ **SpecialCharacters**: { \`this_prop_has_underscores\`: *number* ; \`this|prop|has|the|pipe|character\`: *string*  }
 
 #### Type declaration:
 
 Name | Type |
 ------ | ------ |
-\`this_prop_has_underscores\` | number |
-this\\\\|prop\\\\|has\\\\|the\\\\|pipe\\\\|character | string |
+\`this_prop_has_underscores\` | *number* |
+this\\\\|prop\\\\|has\\\\|the\\\\|pipe\\\\|character | *string* |
+
+[partial: member.sources]
 "
 `;

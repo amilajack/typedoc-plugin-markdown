@@ -20,25 +20,6 @@ describe(`CustomTheme:`, () => {
     });
   });
 
-  test(`should set 'ifShowIndex' to true on modules if navigation enabled`, () => {
-    expect(
-      Handlebars.helpers.ifShowIndex.call(
-        testApp.project.children,
-        TestApp.handlebarsOptionsStub,
-      ),
-    ).toBeTruthy();
-  });
-
-  test(`should set 'ifShowIndex' to false on classes if navigation enabled`, () => {
-    const reflection = testApp.findReflection('Breadcrumbs');
-    expect(
-      Handlebars.helpers.ifShowIndex.call(
-        reflection,
-        TestApp.handlebarsOptionsStub,
-      ),
-    ).toBeFalsy();
-  });
-
   test(`should set 'ifShowReflectionPath' to true if navigation enabled`, () => {
     const reflection = testApp.findReflection('Breadcrumbs');
     expect(

@@ -14,10 +14,10 @@ const DEFAULT_PLUGIN_OPTIONS: PluginOptions = {
   sidebar: {
     fullNames: false,
     sidebarFile: 'typedoc-sidebar.js',
-    globalsLabel: 'Exports',
+    indexLabel: 'Index',
     readmeLabel: 'Readme',
   },
-  globalsTitle: undefined,
+  indexTitle: undefined,
   readmeTitle: undefined,
 };
 

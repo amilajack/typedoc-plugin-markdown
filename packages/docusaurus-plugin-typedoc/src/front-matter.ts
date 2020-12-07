@@ -10,7 +10,7 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
   outFolder: string;
   sidebar: SidebarOptions | null;
   readmeTitle?: string;
-  globalsTitle?: string;
+  indexTitle?: string;
   entryFile = 'index.md';
   globalsFile = 'modules.md';
 
@@ -19,7 +19,7 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
     this.outFolder = options?.out;
     this.sidebar = options?.sidebar;
     this.readmeTitle = options?.readmeTitle;
-    this.globalsTitle = options?.globalsTitle;
+    this.indexTitle = options?.indexTitle || options?.globalsTitle;
   }
   getYamlItems(page: PageEvent): FrontMatter {
     const pageId = this.getId(page);
@@ -44,12 +44,12 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
   }
 
   getTitle(page: PageEvent) {
-    const globalsTitle = this.globalsTitle || page.project.name;
+    const globalsTitle = this.indexTitle || 'Index';
     const readmeTitle = this.readmeTitle || page.project.name;
     if (page.url === this.entryFile) {
       return page.url === page.project.url ? globalsTitle : readmeTitle;
     }
-    if (page.url === this.globalsFile) {
+    if (this.indexTitle && page.url === this.globalsFile) {
       return globalsTitle;
     }
     return super.getTitle(page);
@@ -58,7 +58,7 @@ export class DocusaurusFrontMatterComponent extends FrontMatterComponent {
   getSidebarLabel(page: PageEvent) {
     if (page.url === this.entryFile) {
       return page.url === page.project.url
-        ? this.sidebar?.globalsLabel
+        ? this.sidebar?.globalsLabel || this.sidebar?.indexLabel
         : this.sidebar?.readmeLabel;
     }
 

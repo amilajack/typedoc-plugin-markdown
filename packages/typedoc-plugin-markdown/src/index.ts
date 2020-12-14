@@ -1,8 +1,6 @@
 import { Application } from 'typedoc/dist/lib/application';
 import { ParameterType } from 'typedoc/dist/lib/utils/options/declaration';
 
-import { MarkdownPlugin } from './plugin';
-
 export = (PluginHost: Application) => {
   const app = PluginHost.owner;
 
@@ -43,5 +41,5 @@ export = (PluginHost: Application) => {
     defaultValue: false,
   });
 
-  app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
+  //  app.converter.addComponent('markdown', new MarkdownPlugin(app.converter));
 };

@@ -24,7 +24,8 @@
   },
   "devDependencies": {
     "@docusaurus/types": "^2.0.0-alpha.37",
-    "typedoc": "0.20.0-beta.26",
+    "await-timeout": "^1.1.1",
+    "typedoc": "0.20.0-beta.27",
     "typedoc-plugin-markdown": "*",
     "typescript": "^4.0.5"
   },
@@ -32,7 +33,7 @@
     "lint": "eslint ./src --ext .ts",
     "prepublishOnly": "npm run lint && npm run build && npm run test",
     "build": "rm -rf ./dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
-    "demo:start": "npm run build && cd demo && npm run start",
+    "demo:start": "rm -rf ./demo/docs/api &&  npm run build && cd demo && npm run start",
     "demo:build-and-serve": "npm run build && cd demo && npm run build && npm run serve",
     "demo:init": "rm -rf demo && npx @docusaurus/init@next init demo classic",
     "test": "jest --colors --silent",

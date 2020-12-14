@@ -33,7 +33,9 @@ export class MarkdownPlugin extends ConverterComponent {
    * Load markdown theme and perform additional checks
    */
   onResolveBegin() {
+    console.log('z', this.theme, 'y');
     if (!['default', 'markdown'].includes(this.theme)) {
+      console.log('AAA');
       // For custom themes check that the theme is a markdown theme
       // If it is return and pass through to renderer
       const themeFileName = path.resolve(path.join(this.theme, 'theme.js'));
@@ -44,7 +46,7 @@ export class MarkdownPlugin extends ConverterComponent {
         `[typedoc-plugin-markdown] '${this.theme}' is not a recognised markdown theme. If an html theme is required, please disable this plugin.`,
       );
     }
-
+    console.log('BBB');
     // Set the default markdown theme
     this.application.options.setValue('theme', path.join(__dirname));
   }

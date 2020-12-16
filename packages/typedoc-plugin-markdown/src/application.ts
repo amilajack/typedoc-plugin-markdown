@@ -1,9 +1,13 @@
 import * as path from 'path';
 
-import { Application, ProjectReflection } from 'typedoc';
+import * as fs from 'fs-extra';
+import { Application, ProjectReflection, UrlMapping } from 'typedoc';
+import { RendererEvent } from 'typedoc/dist/lib/output/events';
 import { Component, ParameterType } from 'typedoc/dist/lib/utils';
 
 import { MarkdownRenderer } from './renderer';
+import { reflectionTemplate } from './templates/reflection';
+import MarkdownTheme from './theme';
 
 @Component({ name: 'markdown-application', internal: true })
 export class MarkdownApplication extends Application {
@@ -59,19 +63,30 @@ export class MarkdownApplication extends Application {
     // this.converter.addComponent('markdown', new MarkdownPlugin(this.converter));
   }
 
-  async generateDocs(project: ProjectReflection, out: string): Promise<void> {
-    out = path.resolve(out);
-    console.log('GENERATE');
-    await this.markdownRenderer.render(project, out);
-    if (this.logger.hasErrors()) {
-      this.logger.error(
-        '[typedoc-plugin-markdown] Documentation could not be generated due to the errors above.',
+  async generateDocs(
+    project: ProjectReflection,
+    outputDirectory: string,
+  ): Promise<void> {
+    outputDirectory = path.resolve(outputDirectory);
+
+    const theme = new MarkdownTheme(
+      this.application.renderer,
+      path.resolve(__dirname, '..', 'dist'),
+    );
+
+    const output = new RendererEvent(
+      RendererEvent.BEGIN,
+      outputDirectory,
+      project,
+    );
+    const urls = theme.getUrls(project);
+
+    urls.forEach((mapping: UrlMapping) => {
+      fs.outputFileSync(
+        outputDirectory + '/' + mapping.url,
+        reflectionTemplate(output.createPageEvent(mapping)),
       );
-    } else {
-      this.logger.success(
-        '[typedoc-plugin-markdown] Documentation generated at %s',
-        out,
-      );
-    }
+    });
+    console.log('urls written');
   }
 }

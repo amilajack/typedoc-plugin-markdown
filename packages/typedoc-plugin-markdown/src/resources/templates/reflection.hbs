@@ -12,6 +12,8 @@
 
 {{#if model.typeParameters}}
 
+---
+
 ## Type parameters
 
 {{#with model.typeParameters}}
@@ -22,19 +24,9 @@
 
 {{/if}}
 
-{{#if model.typeHierarchy}}
+{{#if model.typeHierarchy && model.implementedTypes.length}}
 
-## Hierarchy
-
-{{#with model.typeHierarchy}}
-
-{{{hierarchy 0}}}
-
-{{/with}}
-
-{{/if}}
-
-{{#if model.implementedTypes}}
+---
 
 ## Implements
 
@@ -44,7 +36,9 @@
 
 {{/if}}
 
-{{#if model.implementedBy}}
+{{#if model.implementedBy && model.implementedBy.length}}
+
+---
 
 ## Implemented by
 
@@ -55,6 +49,8 @@
 {{/if}}
 
 {{#if model.signatures}}
+
+---
 
 ## Callable
 
@@ -71,6 +67,8 @@
 {{/if}}
 
 {{#if model.indexSignature}}
+
+---
 
 ## Indexable
 

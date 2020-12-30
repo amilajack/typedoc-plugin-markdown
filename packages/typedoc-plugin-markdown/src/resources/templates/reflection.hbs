@@ -24,7 +24,8 @@
 
 {{/if}}
 
-{{#if model.typeHierarchy && model.implementedTypes.length}}
+{{#if model.typeHierarchy}}
+{{#if model.implementedTypes.length}}
 
 ---
 
@@ -35,8 +36,10 @@
 {{/each}}
 
 {{/if}}
+{{/if}}
 
-{{#if model.implementedBy && model.implementedBy.length}}
+{{#if model.implementedBy }}
+{{#if model.implementedBy.length}}
 
 ---
 
@@ -46,6 +49,7 @@
 * {{{type false}}}
 {{/each}}
 
+{{/if}}
 {{/if}}
 
 {{#if model.signatures}}

@@ -2,7 +2,9 @@
 
 {{#if name}}
 
+{{#unless signatures}}
 ### {{#ifNamedAnchors}}<a id="{{anchor}}" name="{{this.anchor}}"></a> {{/ifNamedAnchors}}{{ escape name }}
+{{/unless}}
 
 {{/if}}
 
@@ -41,5 +43,6 @@
 {{#unless @last}}
 {{#unless hasOwnDocument}}
 {{!-- ___ --}}
+<br/>
 {{/unless}}
 {{/unless}}

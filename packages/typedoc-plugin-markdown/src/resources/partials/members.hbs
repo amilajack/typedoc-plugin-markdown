@@ -2,6 +2,10 @@
 
 {{#each categories}}
 
+---
+
+<br/>
+
 {{#unless allChildrenHaveOwnDocument}}
 
 ## {{title}}
@@ -24,15 +28,15 @@
 
 {{#each groups}}
 
+---
+
+<br/>
+
 {{#unless allChildrenHaveOwnDocument}}
 
 {{> members.group}}
 
 {{/unless}}
-
----
-
-<br/>
 
 {{/each}}
 

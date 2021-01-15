@@ -1,6 +1,6 @@
 {
   "name": "@amilajack/typedoc-plugin-markdown",
-  "version": "3.0.11",
+  "version": "3.0.12",
   "description": "A plugin for TypeDoc that enables TypeScript API documentation to be generated in Markdown.",
   "main": "dist/index.js",
   "files": [
@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "lint": "eslint ./src --ext .ts",
-    "prepublishOnly": "npm run lint && npm run build && npm run test",
+    "prepublishOnly": "npm run lint && npm run build",
     "build": "rm -rf dist && tsc && copyfiles --up 1 ./src/**/*.hbs ./dist/",
     "test": "jest --colors",
     "build-and-test": "npm run build && npm run test",

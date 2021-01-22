@@ -357,7 +357,8 @@ export default class MarkdownTheme extends Theme {
       {
         kind: [ReflectionKind.Namespace, ReflectionKind.Module],
         isLeaf: false,
-        directory: 'modules',
+        // A hack to make sure 'modules' are sorted before other files. files are sorted and concatenated by concat-md
+        directory: '_modules',
         template: 'reflection.hbs',
       },
       ...(this.allReflectionsHaveOwnDocument
